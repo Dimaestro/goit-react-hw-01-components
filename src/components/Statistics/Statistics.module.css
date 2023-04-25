@@ -1,0 +1,59 @@
+.statistics {
+  padding-top: 50px;
+  margin-bottom: 20px;
+  
+  border-radius: 8px;
+  box-shadow: 1px 1px 8px #168bf22a;
+  background-color: #fff;
+  overflow: hidden;
+
+  transition-property: box-shadow, transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.statistics:hover {
+  box-shadow: 5px 5px 8px #168bf22a;
+  transform: scale(1.01);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.statList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.item {
+  padding: 15px 10px;
+  flex-basis: calc(100% / 5);
+  text-align: center;
+
+  background-color: aqua;
+}
+.label {
+  font-size: 14px;
+}
+.percentage {
+  font-size: 20px;
+  display: block;
+}
+
+.docx {
+  background-color: blue;
+}
+
+.pdf {
+  background-color: purple;
+}
+
+.psd {
+  background-color: teal;
+}
+
+.mp3 {
+  background-color: red;
+}
