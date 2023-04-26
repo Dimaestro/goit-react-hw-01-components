@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types';
 import style from './Statistics.module.css';
 import clsx from 'clsx';
-import {colorPickerItemStatic} from '../../helper/colorPicker';
-
+import { colorPickerItemStatic } from '../../helper/colorPicker';
 
 const Statistics = ({ title, stats }) => {
   return (
@@ -9,19 +9,31 @@ const Statistics = ({ title, stats }) => {
       {title && <h2 className={style.title}>Upload stats</h2>}
 
       <ul className={style.statList}>
-
-        {stats.map(item => {
+        {stats.map(({ id, label, percentage }) => {
           return (
-            <li key={item.id} className={clsx(style.item, style[colorPickerItemStatic(item.label)])}>
-              <span className={style.label}>{item.label}</span>
-              <span className={style.percentage}>{item.percentage}%</span>
+            <li
+              key={id}
+              className={clsx(style.item, style[colorPickerItemStatic(label)])}
+            >
+              <span className={style.label}>{label}</span>
+              <span className={style.percentage}>{percentage}%</span>
             </li>
           );
         })}
-
       </ul>
     </section>
   );
+};
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    })
+  ),
 };
 
 export default Statistics;
